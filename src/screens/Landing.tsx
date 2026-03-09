@@ -1,4 +1,4 @@
-import { Suspense, useRef, useMemo, useEffect, useState, useCallback } from 'react';
+import React, { Suspense, useRef, useMemo, useEffect, useState, useCallback, Component } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
@@ -9,6 +9,22 @@ import { DecryptText } from '../components/DecryptText';
 // ══════════════════════════════════════════════════════════════════════
 // 1. NODE GRAPH with cursor-parallax (improvement #7)
 // ══════════════════════════════════════════════════════════════════════
+class CanvasErrorBoundary extends Component<{ children: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return null;
+    }
+    return this.props.children;
+  }
+}
+
 const NODE_COUNT = 52;
 const MAX_CONNECT_DIST = 2.3;
 const RADIUS = 3.2;
@@ -263,14 +279,19 @@ export default function Landing() {
       >
         {/* Node graph canvas */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
-          <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
-            <ambientLight intensity={0.35} />
-            <pointLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
-            <pointLight position={[-5, -3, 2]} intensity={0.4} color="#FF0031" />
-            <Suspense fallback={null}>
-              <NodeGraph mouseX={mouseVals.x} mouseY={mouseVals.y} />
-            </Suspense>
-          </Canvas>
+          <CanvasErrorBoundary>
+            <Canvas 
+              camera={{ position: [0, 0, 7], fov: 50 }}
+              gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+            >
+              <ambientLight intensity={0.35} />
+              <pointLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
+              <pointLight position={[-5, -3, 2]} intensity={0.4} color="#FF0031" />
+              <Suspense fallback={null}>
+                <NodeGraph mouseX={mouseVals.x} mouseY={mouseVals.y} />
+              </Suspense>
+            </Canvas>
+          </CanvasErrorBoundary>
         </div>
 
         {/* Radial vignette */}
