@@ -117,10 +117,10 @@ export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
                 color: 'var(--accent)',
                 letterSpacing: '0.02em',
                 opacity: isActive ? 1 : 0,
-                transform: isActive ? 'translateY(0)' : 'translateY(8px)',
+                transform: isActive ? 'translateY(4px)' : 'translateY(12px)',
                 transition: 'opacity 150ms ease, transform 150ms ease',
                 position: 'absolute',
-                bottom: '6px',
+                bottom: '4px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center'
