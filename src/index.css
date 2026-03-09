@@ -46,7 +46,7 @@
   --shadow-focus: 0 0 16px var(--accent-glow);
   
   /* MEASUREMENTS */
-  --safe-top: 52px;
+  --safe-top: 24px;
   --safe-bottom: 34px;
   --screen-width: 390px;
   --bg-margin: 16px;
