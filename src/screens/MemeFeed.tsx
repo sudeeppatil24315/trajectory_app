@@ -1,4 +1,4 @@
-import { MagnifyingGlass, Plus, Heart, ChatCircle, ShareFat, BookmarkSimple, DotsThree, ArrowUp, Fire } from '@phosphor-icons/react';
+import { MagnifyingGlass, Plus, Heart, ChatCircle, ShareFat, BookmarkSimple, DotsThree, Fire } from '@phosphor-icons/react';
 import { TopHeader } from '../components/TopHeader';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';

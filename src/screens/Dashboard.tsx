@@ -458,7 +458,7 @@ export default function Dashboard() {
 
         {/* Scroll dot indicator */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginTop: '12px' }}>
-          {['focus', 'sleep', 'screen'].map((key, i) => (
+          {['focus', 'sleep', 'screen'].map((_, i) => (
             <div key={i} style={{ width: i === 0 ? '16px' : '6px', height: '4px', borderRadius: '2px', backgroundColor: i === 0 ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.15)', transition: 'all 0.2s ease' }} />
           ))}
         </div>

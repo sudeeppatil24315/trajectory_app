@@ -1,8 +1,8 @@
 import { Suspense, useRef, useMemo, useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { ArrowRight, Code, TrendUp, ChatCircle, Brain, ArrowDown } from '@phosphor-icons/react';
+import { ArrowRight, Code, TrendUp, ChatCircle, Brain } from '@phosphor-icons/react';
 import * as THREE from 'three';
 import { DecryptText } from '../components/DecryptText';
 
