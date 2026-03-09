@@ -469,7 +469,7 @@ export default function Dashboard() {
         className="flex-row"
         style={{
           position: 'sticky',
-          top: '52px',
+          top: '44px',
           zIndex: 40,
           padding: '24px var(--bg-margin) 12px',
           gap: '10px',

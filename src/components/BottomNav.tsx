@@ -47,7 +47,7 @@ export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
         transform: 'translateX(-50%)',
         width: '100%',
         maxWidth: 'var(--screen-width)',
-        height: '92px', /* 58px + 34px safe area */
+        height: '82px', /* 48px + 34px safe area */
         backgroundColor: 'rgba(0, 0, 0, 0.85)',
         backdropFilter: 'blur(32px) saturate(150%)',
         WebkitBackdropFilter: 'blur(32px) saturate(150%)',
@@ -63,8 +63,8 @@ export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
       <div 
         style={{
           position: 'absolute',
-          top: '10px',
-          height: '38px',
+          top: '7px',
+          height: '34px',
           borderRadius: '100px',
           backgroundColor: 'var(--accent)',
           opacity: 0.15,
@@ -88,7 +88,7 @@ export function BottomNav({ activeTab, onTabChange }: BottomNavProps) {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              height: '58px',
+              height: '48px',
               cursor: 'pointer',
               position: 'relative'
             }}

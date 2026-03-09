@@ -222,7 +222,7 @@ export default function MemeFeed() {
       {/* ── Category chips ─────────────────────────────── */}
       <div
         style={{
-          position: 'sticky', top: '52px', zIndex: 40,
+          position: 'sticky', top: '44px', zIndex: 40,
           padding: '10px var(--bg-margin)',
           gap: '8px', display: 'flex',
           overflowX: 'auto', scrollbarWidth: 'none',

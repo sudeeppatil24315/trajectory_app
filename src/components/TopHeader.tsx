@@ -14,7 +14,7 @@ export function TopHeader({ left, center, right, scrolled = false }: TopHeaderPr
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        height: '52px',
+        height: '44px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
